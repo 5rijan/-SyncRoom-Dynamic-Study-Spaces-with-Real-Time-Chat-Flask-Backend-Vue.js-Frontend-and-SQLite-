@@ -1,0 +1,2 @@
+# -SyncRoom-Dynamic-Study-Spaces-with-Real-Time-Chat-Flask-Backend-Vue.js-Frontend-and-SQLite-
+"SyncRoom, a cutting-edge study platform, redefines collaborative learning. Crafted with Flask for a robust backend, CSS, HTML, and Three.js for an immersive frontend, and SQLAlchemy for seamless database integration. Elevate your study experience with synchronized timers, real-time chat, dynamic themes, and a secure passcode system.
