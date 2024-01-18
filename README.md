@@ -1,4 +1,4 @@
-# Stu-Focus-Dynamic-Study-Spaces-with-Real-Time-Chat-Flask-Backend-Vue.js-Frontend-and-SQLite-Multi-Feature-Study-Platform
+# Stu-Focus-Dynamic-Study-Spaces-with-Real-Time-Chat-Flask-Backend-Frontend-and-SQLite-database-Multi-Feature-Study-Platform
 
 
 This project serves as a comprehensive virtual study platform, providing users with an immersive study environment and collaborative tools. Users can create unique study rooms, invite others using passcodes, and benefit from features like to-do lists, alarms, timers, music streaming, and real-time chat.
