@@ -31,26 +31,27 @@ This file, `app.py`, acts as the central hub for our Flask application, responsi
 
 ## Project Structure
 
-├── stu-focus/               # Main project directory
-│   ├── instance/            # Instance directory with rooms.db
-│   │   └── rooms.db         # SQLite database file
-│   ├── migrations/          # Database migrations directory
-│   │   ├── pycache/
-│   │   └── version/
-│   ├── static/              # Static files (CSS, JS, images)
-│   │   ├── room.css
-│   │   ├── room.js
-│   │   ├── script.js
-│   │   ├── style.css
-│   │   └── src/             # Image sources directory
-│   │       └── ...           # Other image files
-│   ├── templates/           # HTML templates
-│   │   ├── index.html
-│   │   └── room.html
-│   ├── app.py               # Main entry point for the Flask application
-│   ├── requirements.txt     # List of project dependencies
-│   └── test.py              # Test script 
-└── README.md                # Project documentation
+├── stu-focus/                  # Main project directory
+│   ├── instance/               # Instance directory with rooms.db
+│   │   └── rooms.db            # SQLite database file
+│   ├── migrations/             # Database migrations directory
+│   │   ├── pycache/            # Python cache files
+│   │   └── version/            # Migration version files
+│   ├── static/                 # Static files (CSS, JS, images)
+│   │   ├── room.css            # CSS styles for the room
+│   │   ├── room.js             # JavaScript logic for the room
+│   │   ├── script.js           # Other JavaScript logic
+│   │   ├── style.css           # General CSS styles
+│   │   └── src/                # Image sources directory
+│   │       └── ...              # Other image files
+│   ├── templates/              # HTML templates
+│   │   ├── index.html          # Main page template
+│   │   └── room.html           # Study room template
+│   ├── app.py                  # Main entry point for the Flask application
+│   ├── requirements.txt        # List of project dependencies
+│   └── test.py                 # Test script
+└── README.md                   # Project documentation
+           # Project documentation
 
 ## Screenshots
 
