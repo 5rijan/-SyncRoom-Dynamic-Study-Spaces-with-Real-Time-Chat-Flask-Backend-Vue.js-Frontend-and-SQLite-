@@ -1,0 +1,1557 @@
+<!--
+Multi-Feature-Study-Platform Main Application
+
+This file, index.html, serves as the main page of our application. It includes all the necessary CSS files and sets up the basic structure of the page.
+
+Key Components:
+- Meta tags for setting the character set and viewport.
+- Link tags for including external CSS files and fonts.
+- The main structure of the page is defined in the body (not shown in this excerpt).
+
+Purpose:
+This file sets up the basic structure and style of the main page of the application. It plays a central role in the Multi-Feature-Study-Platform application, serving as the first page that users see when they visit the site.
+
+Author: Srijan Chaudhary (5rijan)
+last modified: 5/1/21
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>stu-focus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="static/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" >
+<link rel="stylesheet" href="static/style.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+<link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sigmar+One">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900">
+
+
+
+
+
+</head>
+<body>
+<!--logo--> 
+    <div class="logo">
+        <input type="checkbox" id="toggle"/>
+        <div class="toggle">
+          <div class="toggle__head"></div>
+          <div class="toggle__ear toggle__ear--left"></div>
+          <div class="toggle__ear toggle__ear--right"></div>
+          <div class="toggle__ear toggle__ear--left toggle__ear--clone"></div>
+          <div class="toggle__ear toggle__ear--right toggle__ear--clone"></div>
+          <div class="toggle__face">
+            <div class="toggle__eye toggle__eye--left"></div>
+            <div class="toggle__eye toggle__eye--right"></div>
+            <div class="toggle__mouth"></div>
+          </div>
+          <div class="toggle__label">Stu -<br/>Focus</div>
+          <div class="toggle__scribble"></div>
+        </div>
+        <svg>
+          <filter id="scribble--0">
+            <feturbulence basefrequency="0.02" numoctaves="3" result="noise" seed="0"></feturbulence>
+            <fedisplacementmap id="displacement" in="SourceGraphic" in2="noise" scale="2"></fedisplacementmap>
+          </filter>
+          <filter id="scribble--1">
+            <feturbulence basefrequency="0.02" numoctaves="3" result="noise" seed="1"></feturbulence>
+            <fedisplacementmap in="SourceGraphic" in2="noise" scale="3"></fedisplacementmap>
+          </filter>
+          <filter id="scribble--2">
+            <feturbulence basefrequency="0.02" numoctaves="3" result="noise" seed="2"></feturbulence>
+            <fedisplacementmap in="SourceGraphic" in2="noise" scale="2"></fedisplacementmap>
+          </filter>
+          <filter id="scribble--3">
+            <feturbulence basefrequency="0.02" numoctaves="3" result="noise" seed="3"></feturbulence>
+            <fedisplacementmap in="SourceGraphic" in2="noise" scale="3"></fedisplacementmap>
+          </filter>
+          <filter id="scribble--4">
+            <feturbulence basefrequency="0.02" numoctaves="3" result="noise" seed="4"></feturbulence>
+            <fedisplacementmap in="SourceGraphic" in2="noise" scale="2"></fedisplacementmap>
+          </filter>
+        </svg>
+        </div>
+
+
+    
+<!--background gradient--> 
+<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="Gradient1" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+      <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#ff0" />
+      <stop offset="100%" stop-color="#ff00" />
+    </radialGradient>
+    <radialGradient id="Gradient2" cx="50%" cy="50%" fx="10%" fy="50%" r=".5">
+      <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#0ff" />
+      <stop offset="100%" stop-color="#0ff0" />
+    </radialGradient>
+    <radialGradient id="Gradient3" cx="50%" cy="50%" fx="50%" fy="50%" r=".5">
+      <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite" />
+      <stop offset="0%" stop-color="#f0f" />
+      <stop offset="100%" stop-color="#f0f0" />
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient1)">
+    <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite" />
+    <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="25s" repeatCount="indefinite" />
+  </rect>
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient2)">
+    <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite" />
+    <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="26s" repeatCount="indefinite" />
+  </rect>
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#Gradient3)">
+    <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite" />
+    <animate attributeName="y" dur="26s" values="0%;25%;0%" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="27s" repeatCount="indefinite" />
+  </rect>
+</svg>
+
+
+
+<!--popup box--> 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js'></script>
+
+<div class="overlay">
+<div class="popup-container">
+	<label class="button" for="login-popup"></label>
+	<input type="checkbox" id="login-popup">
+	<div class="popup">
+	<div class="overall">
+        <div class="section">
+            <div class="container">
+                <div class=".close-btn"></div>
+                <div class="row full-height justify-content-center">
+                    <div class="col-12 text-center align-self-center py-5">
+                        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                            <h6 class="mb-0 pb-3"><span>Join_room </span><span>Create_room</span></h6>
+                              <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                              <label for="reg-log"></label>
+                            <div class="card-3d-wrap mx-auto">
+                                <div class="card-3d-wrapper">
+                                    <div class="card-front">
+                                        <div class="center-wrap">
+                                            <div class="section text-center">
+                                                <h4 class="mb-4-pb-3">Join room</h4>
+                                                <div class="form-group">
+                                                    <form id="myForm" action="/submit" method="post">
+                                                    <input type="text" name="logemail" class="form-style" placeholder="Your Name" id="logemail" autocomplete="off" required>
+                                                    <i class="input-icon uil uil-at"></i>
+                                                </div>	
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="logpass" class="form-style" placeholder="Your Passcode" id="logpass" autocomplete="off" required>
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <button type="submit" class="btn mt-4" value="Submit">Submit</button>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </form>
+                                    <div class="card-back">
+                                        <div class="center-wrap">
+                                            <div class="section text-center">
+                                                <h4 class="mb-4-pb-3">Create room</h4>
+                                                <div class="form-group">
+                                                    <form action="/submit" method="post">
+                                                    <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" required>
+                                                    <i class="input-icon uil uil-user"></i>
+                                                </div>	
+                                                <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                                                <input type="hidden" name="selectedImageId" id="selectedImageId" value="1">
+                                                <div class="form-group-slider">
+                                                    <div class="swiper-container">
+                                                        <div class="swiper-wrapper">
+
+                                                          <div class="slider-item swiper-slide" data-container-id="1">
+                                                            <div class="slider_card1" data-container-id="1">
+                                                            <div class="slider-image-wrapper">
+                                                              <img class="slider-image" src="https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2600&q=80" alt="SliderImg">
+                                                              </div>
+                                                            <div class="slider-item-content">
+                                                              <h1>Postcards From Italy</h1>
+                                                              <p class="slidertext">Lorem ipsum dolor sit amet</p>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+
+
+                                                          <div class="slider-item swiper-slide" data-container-id="2">
+                                                            <div class="slider_card2" data-container-id="2">
+                                                            <div class="slider-image-wrapper">
+                                                              <img class="slider-image" src="https://images.unsplash.com/photo-1491900177661-4e1cd2d7cce2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=80" alt="SliderImg">
+                                                              </div>
+                                                            <div class="slider-item-content">
+                                                              <h1>Bunker</h1>
+                                                              <p class="slidertext">Lorem ipsum dolor sit amet</p>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+
+                                                          <div class="slider-item swiper-slide" data-container-id="3">
+                                                            <div class="slider_card3" data-container-id="3">
+                                                            <div class="slider-image-wrapper">
+                                                              <img class="slider-image" src="https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2600&q=80" alt="SliderImg">
+                                                              </div>
+                                                            <div class="slider-item-content">
+                                                              <h1>Small Mountain</h1>
+                                                              <p class="slidertext">Lorem ipsum dolor sit amet</p>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+
+                                                          <div class="slider-item swiper-slide" data-container-id="4">
+                                                            <div class="slider_card4" data-container-id="4">
+                                                            <div class="slider-image-wrapper">
+                                                              <img class="slider-image" src="https://images.unsplash.com/photo-1564604761388-83eafc96f668?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2250&q=801.2.1&auto=format&fit=crop&w=2167&q=80" alt="SliderImg">
+                                                              </div>
+                                                            <div class="slider-item-content">
+                                                              <h1>Walking On a Dream</h1>
+                                                              <p class="slidertext">Lorem ipsum dolor sit amet</p>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                        <div class="slider-buttons">
+                                                            <button class="swiper-button-prev">Prev &nbsp &nbsp</button>
+                                                            <button class="swiper-button-next">Next</button>
+                                                        </div>
+                                                      
+                                                        <div class="swiper-pagination"></div>
+                                                      </div>
+                                                      <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.5/swiper-bundle.min.js'></script>                                                  
+                                                </div>
+                                                <button type="submit" class="btn mt-4" value="Submit">Submit</button>
+                                            </form>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<!--artwork--> 
+<div class="main">
+        <div class="montaña">
+            <label class="text" for="login-popup"><h>Join_room</h></label>
+            <div class="base-b">
+                <div class="suelo face">
+                    <div class="suelo__front face"></div>
+                    <div class="suelo__back face"></div>
+                    <div class="suelo__right face"></div>
+                    <div class="suelo__left face"></div>
+                    <div class="suelo__top face"></div>
+                    <div class="suelo__bottom face"></div>
+                </div>
+                <div class="suelo face">
+                    <div class="suelo__front face"></div>
+                    <div class="suelo__back face"></div>
+                    <div class="suelo__right face"></div>
+                    <div class="suelo__left face"></div>
+                    <div class="suelo__top face"></div>
+                    <div class="suelo__bottom face"></div>
+                </div>
+                <div class="agua face">
+                    <div class="agua__front face"></div>
+                    <div class="agua__back face"></div>
+                    <div class="agua__right face"></div>
+                    <div class="agua__left face"></div>
+                    <div class="agua__top face"></div>
+                    <div class="agua__bottom face"></div>
+                </div>
+                <div class="camino face"></div>
+                <div class="puente face">
+                    <div class="puente__front face"></div>
+                    <div class="puente__back face"></div>
+                    <div class="puente__right face"></div>
+                    <div class="puente__left face"></div>
+                    <div class="puente__top face"></div>
+                    <div class="puente__bottom face"></div>
+                </div>
+                <div class="casa face">
+                    <div class="casa__front face"></div>
+                    <div class="casa__back face"></div>
+                    <div class="casa__right face"></div>
+                    <div class="casa__left face"></div>
+                    <div class="casa__top face"></div>
+                    <div class="casa__bottom face"></div>
+                </div>
+                <div class="chimenea face">
+                    <div class="chimenea__front face"></div>
+                    <div class="chimenea__back face"></div>
+                    <div class="chimenea__right face"></div>
+                    <div class="chimenea__left face"></div>
+                    <div class="chimenea__top face">
+                        <div class="humo"></div>
+                        <div class="humo"></div>
+                        <div class="humo"></div>
+                        <div class="humo"></div>
+                    </div>
+                    <div class="chimenea__bottom face"></div>
+                </div>
+
+            </div>
+            <div class="pared face">
+                <div class="pared-b pared-s face">
+                    <div class="pared-a__front face"></div>
+                    <div class="pared-a__back face"></div>
+                    <div class="pared-a__right face"></div>
+                    <div class="pared-a__left face"></div>
+                    <div class="pared-a__top face">
+                        <div class="pino pino-td face">
+                            <div class="pino pino-ta face">
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                            </div>
+                            <div class="pino pino-tb face">
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="pared-a__bottom face"></div>
+                </div>
+                <div class="pared-a pared-s face">
+                    <div class="pared-b__front face"></div>
+                    <div class="pared-b__back face"></div>
+                    <div class="pared-b__right face"></div>
+                    <div class="pared-b__left face"></div>
+                    <div class="pared-b__top face">
+                        <div class="pino pino-tf face">
+                            <div class="pino pino-ta face">
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                            </div>
+                            <div class="pino pino-tb face">
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pared-b__bottom face"></div>
+                </div>
+                <div class="pared-c pared-s face">
+                    <div class="pared-c__front face"></div>
+                    <div class="pared-c__back face"></div>
+                    <div class="pared-c__right face"></div>
+                    <div class="pared-c__left face"></div>
+                    <div class="pared-c__top face">
+                        <div class="pino pino-td face">
+                            <div class="pino pino-ta face">
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                            </div>
+                            <div class="pino pino-tb face">
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                                <div class="pino-c face"><div class="pino__front face"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pared-c__bottom face"></div>
+                </div>
+
+                <div class="pared-c pared-s pared-d face">
+                    <div class="pared-c__front face"></div>
+                    <div class="pared-c__back face"></div>
+                    <div class="pared-c__right face"></div>
+                    <div class="pared-c__left face"></div>
+                    <div class="pared-c__top face"></div>
+                    <div class="pared-c__bottom face"></div>
+                </div>
+                <div class="pared-a pared-s pared-f face">
+                    <div class="pared-a__front face"></div>
+                    <div class="pared-a__back face"></div>
+                    <div class="pared-a__right face"></div>
+                    <div class="pared-a__left face"></div>
+                    <div class="pared-a__top face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pared-a__bottom face"></div>
+                </div>
+                <div class="pared-a pared-s pared-e face">
+                    <div class="pared-a__front face"></div>
+                    <div class="pared-a__back face"></div>
+                    <div class="pared-a__right face"></div>
+                    <div class="pared-a__left face"></div>
+                    <div class="pared-a__top face">
+                        <div class="pino pino-te face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pared-a__bottom face"></div>
+                </div>
+
+                <div class="cascada face">
+                    <div class="cascada__front face"></div>
+                    <div class="cascada__back face"></div>
+                    <div class="cascada__right face"></div>
+                    <div class="cascada__left face"></div>
+                    <div class="cascada__top face"></div>
+                    <div class="cascada__bottom face"></div>
+                </div>
+            </div>
+
+            <div class="bosque">
+
+                <div class="pinos face">
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tb face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tb face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                </div>
+                <div class="pinos face">
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tb face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tb face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                </div>
+                <div class="pinos face">
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tb face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tb face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                </div>
+                <div class="pinos face">
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tb face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tb face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tc face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-tf face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                </div>
+                <div class="pinos-w face">
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-tb face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-ta face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+                    <div class="pino pino-te face">
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                        <div class="pino-c face"><div class="pino__front face"></div></div>
+                    </div>
+
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+                    <div class="pino pino-td face">
+                        <div class="pino pino-ta face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                        <div class="pino pino-tb face">
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                            <div class="pino-c face"><div class="pino__front face"></div></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<script src="static/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<!-- partial -->
+</body>
+</html>

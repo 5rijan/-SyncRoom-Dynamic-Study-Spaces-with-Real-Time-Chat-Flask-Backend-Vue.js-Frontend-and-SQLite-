@@ -1,0 +1,1204 @@
+/*
+Multi-Feature-Study-Platform Room Stylesheet
+
+This file, room.css, serves as the main stylesheet for the room page of our application. It defines the look and feel of the room page, including colors, animations, and layout.
+
+Key Components:
+- Root variables for defining global colors and gradients that can be reused throughout the file.
+- @keyframes rule for defining the 'rotate' animation.
+- Various classes and IDs for styling specific elements on the room page.
+
+Purpose:
+This file sets up the visual style of the room page of the application. It plays a crucial role in the Multi-Feature-Study-Platform application, defining how the room page looks to the user.
+
+Author: Srijan Chaudhary (5rijan)
+last modified: 5/1/21
+*/
+
+
+:root {
+    --light-blue: rgb(32, 18, 95);
+    --dark-blue: rgb(204, 100, 223);
+    --violet: rgb(119, 188, 236);
+    
+    --background-left: rgb(29, 33, 68);
+    --background-right: rgb(30, 25, 47);
+    
+    --conic-gradient: conic-gradient(
+      var(--dark-blue), 
+      var(--violet), 
+      var(--light-blue),
+      var(--dark-blue)
+    );
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes pulse {
+    from, 20%, 40%, 80%, to {
+      transform: scale(1);
+    }
+    
+    10%, 60% {
+      transform: scale(1.1);
+    }
+  }
+  
+  body {
+    background: linear-gradient(
+      to right, 
+      var(--background-left), 
+      var(--background-right)
+    );
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px;
+  }
+  
+  #background {
+    display: grid;
+    inset: 0px;  
+    place-items: center;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  #circle {
+    animation: rotate 10s linear infinite;
+    background: var(--conic-gradient);
+    border-radius: 70vh;
+    display: grid;
+    filter: blur(1.5vh);
+    height: 70vh;
+    place-items: center;
+    position: relative;
+    width: 70vh;
+  }
+  
+  #circle-inner {
+    border-radius: inherit;
+    inset: 5%;
+    position: absolute;
+  }
+  
+  #circle-glow {
+    animation: pulse 10s ease-in-out infinite;
+    background: var(--conic-gradient);
+    border-radius: 100vh;
+    filter: blur(3vh);
+    height: 120%;
+    opacity: 0.25;
+    width: 120%;
+    z-index: 2;
+  }
+  
+  #circle-inner {
+    background: linear-gradient(
+      to right, 
+      var(--background-left), 
+      var(--background-right)
+    );
+    z-index: 3;
+  }
+  
+
+
+  .options1 {
+    position: absolute;
+    bottom: 0;
+    right: 3%;
+  }
+
+
+  .tabs {
+    --background: #68c0ff1d;
+    --width: 300px;
+    --height: 75px;
+    --border-radius: var(--height);
+    background: var(--background);
+    width: var(--width);
+    height: var(--height);
+    position: relative;
+    border-radius: var(--border-radius);
+    border: 2px solid white;
+    box-shadow: 0 0 30px rgba(229, 232, 239, 0.2);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  .tabs label {
+    -webkit-tap-highlight-color: transparent;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tabs label .icon {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .tabs label .icon .detail,
+  .tabs label .icon .glass,
+  .tabs label .icon .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .tabs label .icon .detail {
+    z-index: 2;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0));
+    transition: filter 0.3s ease;
+  }
+  .tabs label .icon .detail::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #c5ccdc 30%, #c5ccdc 70%);
+    transition: background 0.3s ease;
+  }
+  .tabs label .icon .glass {
+    z-index: 1;
+  }
+  .tabs label .icon .glass::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #83809a;
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+  }
+  .tabs label .icon .glass::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(4px);
+    opacity: 0;
+    z-index: 1;
+  }
+  .tabs label .icon .background {
+    z-index: 0;
+    opacity: 0;
+    transform-origin: 100% 100%;
+    transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--z, 0));
+    transition: transform 0.3s cubic-bezier(0.38, -0.12, 0.15, 1.65);
+  }
+  .tabs label:nth-of-type(1) .icon .glass,
+  .tabs label:nth-of-type(1) .icon .glass::after,
+  .tabs label:nth-of-type(1) .icon .background {
+    -webkit-clip-path: url(#path-icon-01);
+            clip-path: url(#path-icon-01);
+  }
+  .tabs label:nth-of-type(2) .icon .glass,
+  .tabs label:nth-of-type(2) .icon .glass::after,
+  .tabs label:nth-of-type(2) .icon .background {
+    -webkit-clip-path: url(#path-icon-02);
+            clip-path: url(#path-icon-02);
+  }
+  .tabs label:nth-of-type(3) .icon .glass,
+  .tabs label:nth-of-type(3) .icon .glass::after,
+  .tabs label:nth-of-type(3) .icon .background {
+    -webkit-clip-path: url(#path-icon-03);
+            clip-path: url(#path-icon-03);
+  }
+  .tabs label:nth-of-type(4) .icon .glass,
+  .tabs label:nth-of-type(4) .icon .glass::after,
+  .tabs label:nth-of-type(4) .icon .background {
+    -webkit-clip-path: url(#path-icon-04);
+            clip-path: url(#path-icon-04);
+  }
+  .tabs label:nth-of-type(1) .icon .detail::after {
+    -webkit-clip-path: url(#path-detail-01);
+            clip-path: url(#path-detail-01);
+  }
+  .tabs label:nth-of-type(2) .icon .detail::after {
+    -webkit-clip-path: url(#path-detail-02);
+            clip-path: url(#path-detail-02);
+  }
+  .tabs label:nth-of-type(3) .icon .detail::after {
+    -webkit-clip-path: url(#path-detail-03);
+            clip-path: url(#path-detail-03);
+  }
+  .tabs label:nth-of-type(4) .icon .detail::after {
+    -webkit-clip-path: url(#path-detail-04);
+            clip-path: url(#path-detail-04);
+  }
+  
+  
+  
+  
+  
+  .tabs input {
+    display: none;
+  }
+  
+  
+  .tabs .tab-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+  }
+ 
+  
+  .tabs input:checked + label .icon .detail {
+    filter: drop-shadow(2px 2px 2px rgba(85, 85, 85, 0.3));
+  }
+  .tabs input:checked + label .icon .detail::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 30%, white 70%);
+  }
+  .tabs input:checked + label .icon .glass::before {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+  }
+  .tabs input:checked + label .icon .glass::after {
+    opacity: 1;
+    filter: blur(4px);
+  }
+  .tabs input:checked + label .icon .background {
+    --x: 4px;
+    --y: -4px;
+    --z: 15deg;
+    opacity: 1;
+  }
+  
+  
+
+  
+  .tabs input:checked + label:nth-of-type(4n-3) .icon .glass::after {
+    background: rgba(52, 138, 254, 0.5);
+  }
+  .tabs input:checked + label:nth-of-type(4n-3) .icon .background {
+    background: radial-gradient(circle, #348afe 0%, #71adfe 100%);
+  }
+  .tabs input:checked + label:nth-of-type(4n-2) .icon .glass::after {
+    background: rgba(174, 123, 251, 0.5);
+  }
+  .tabs input:checked + label:nth-of-type(4n-2) .icon .background {
+    background: radial-gradient(circle, #ae7bfb 0%, #d2b6fd 100%);
+  }
+  .tabs input:checked + label:nth-of-type(4n-1) .icon .glass::after {
+    background: rgba(249, 89, 159, 0.5);
+  }
+  .tabs input:checked + label:nth-of-type(4n-1) .icon .background {
+    background: radial-gradient(circle, #f9599f 0%, #fb94c1 100%);
+  }
+  .tabs input:checked + label:nth-of-type(4n) .icon .glass::after {
+    background: rgba(246, 105, 95, 0.5);
+  }
+  .tabs input:checked + label:nth-of-type(4n) .icon .background {
+    background: radial-gradient(circle, #f6695f 0%, #f99f99 100%);
+  }
+  
+  
+
+
+
+  #clock {
+    position: absolute;
+    top: 1%;
+    right: 3%;
+    color: #83809a;
+    text-align: center;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-size: 80px;
+    z-index: 4;
+  }
+  
+
+
+
+  #format-button {
+    position: absolute;
+    top: 100px; 
+    right: 50px;
+    border: 2px solid white;
+    color: #bbb9c6;
+    padding: 5px;
+    border: 2px solid #bbb9c6;
+    border-radius: 10px;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    transition: all 0.5s ease;
+    z-index: 5;
+    cursor: pointer;
+  }
+
+  #timer-button {
+    position: absolute;
+    top: 100px; 
+    right: 150px;
+    border: 2px solid white;
+    color: #bbb9c6;
+    padding: 5px;
+    border: 2px solid #bbb9c6;
+    border-radius: 10px;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    transition: all 0.5s ease;
+    z-index: 5;
+    cursor: pointer;
+  }
+
+
+  #alarm-button {
+    position: absolute;
+    top: 100px; 
+    right: 240px;
+    border: 2px solid white;
+    color: #bbb9c6;
+    padding: 5px;
+    border: 2px solid #bbb9c6;
+    border-radius: 10px;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    transition: all 0.5s ease;
+    z-index: 5;
+    cursor: pointer;
+  }
+
+
+
+
+
+  #timerBox {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%; /* Adjust as needed */
+    height: 40%; /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.102);
+    box-shadow: 0 0 30px rgba(229, 232, 239, 0.2);
+    border: 2px solid #eee;
+    z-index: 9; /* Make sure the box is on top of other elements */
+    border-radius: 20px;
+}
+
+#timer_cancelButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent; /* No background */
+    color: rgba(255, 255, 255, 0.58);
+    border: none;
+    font-size: 20px; /* Adjust as needed */
+    cursor: pointer;
+}
+
+#timerControls {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#timerInput {
+  width: 200px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  text-align: center;
+  display: block;
+  background-color: #006aff00;
+  border: 2px solid rgb(255, 254, 254); 
+  color: rgb(244, 244, 244);
+  border-radius: 10px; 
+}
+
+#timerInput:focus {
+  border-color: white; /* Replace with your desired color */
+}
+
+#timerInput::placeholder {
+  color: rgba(236, 234, 234, 0.454); /* Replace with your desired color */
+}
+
+#startTimerButton {
+  outline: none;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: #4790f046;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+  font-family: "Arial Rounded MT Bold", sans-serif;
+  margin-left: 25px;
+  
+}
+
+#startTimerButton:hover {
+  background-color: white;
+  color: black;
+}
+
+#resetTimerButton {
+  border: none;
+  padding-top: 0;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  top: 5px; 
+}
+
+#resetTimerButton:hover i {
+  color: black;
+}
+
+
+#audioOptions {
+  position: absolute;
+  bottom: 100px; /* Adjust as needed */
+  left: 100px; /* Adjust as needed */
+  display: flex; 
+  justify-content: space-between; /* Add this line if you want to distribute the buttons evenly across the horizontal space */
+  gap: 35px; 
+}
+
+#audioOptions input[type="radio"] {
+  display: none;
+}
+
+#audioOptions label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer; 
+  font-size: 18px;
+}
+
+#audioOptions label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Add this line */
+}
+
+#audioOptions input[type="radio"]:checked + label::before {
+  border: 5px solid rgba(166, 184, 247, 0.925);  /* Change this to the color you want for the selected button */
+  background-color: #00000000; /* Change this to the color you want for the selected button's background */
+}
+
+#volumeControl {
+  position: absolute;
+  top: 240px; /* Adjust as needed */
+  right: 150px; /* Adjust as needed */
+}
+label[for='volume'] {
+  font-family: "Arial Rounded MT Bold", sans-serif;
+  font-size: 20px; /* Change to your preferred size */
+  color: rgba(255, 255, 255, 0.855);
+  margin-bottom: 25px;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  width: calc(100% - 25px); /* Subtract the width of the slider thumb */
+  height: 10px;
+  border-radius: 15px;   
+  background: #76747488;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%; 
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+input[type='range']:active::-webkit-slider-thumb {
+  background: #acbedc; /* Change to your preferred color */
+  border: 2px solid #82aceb;
+}
+
+input[type='range']:active::-moz-range-thumb {
+  background: #acbedc; /* Change to your preferred color */
+  border: 2px solid #82aceb;
+}
+
+input[type='range']:active::-ms-thumb {
+  background: #acbedc; /* Change to your preferred color */
+  border: 2px solid #82aceb;
+}
+
+label[for='audio1'],
+label[for='audio2'],
+label[for='noAudio'] {
+    color: white; 
+    font-family: "Arial Rounded MT Bold", sans-serif;
+}
+
+
+
+
+/* ALARM!!!! */
+
+#close-alarm {
+  position: absolute;
+  top: -36px; /* Increase this to move the button down */
+  right: -36px; /* Decrease this to move the button to the left */
+  background-color: transparent; /* No background */
+  color: rgba(255, 255, 255, 0.58);
+  border: none;
+  font-size: 20px; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.alarm-container {
+  font-family: "Arial Rounded MT Bold", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This makes the container take up the full height of the viewport */
+  z-index: 9;
+}
+
+.btn-wrap .alarm, .btn-wrap .mode {
+  margin: 10px;  /* Adjust this value to create the desired amount of space */
+  font-size: 15px; /* Increase this value to increase the font size */
+}
+
+.clock-and-buttons {
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 9;
+}
+
+.alarm-clock-wrap {
+  display: none;
+  position: relative;
+  font-size: 72px;
+  color: #ffffff;
+  margin: 100px 0 10px;
+  border: 4px solid;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  opacity: 1;
+  z-index: 9;
+}
+.alarm-clock-wrap .clock-display {
+  align-items: center;
+  display: flex;
+  color: #9baec8;
+  z-index: 9;
+}
+.alarm-clock-wrap span {
+  font-size: 0.6em;
+}
+.alarm-clock-wrap ul {
+  position: absolute;
+  list-style: none;
+  font-size: 0.35em;
+  padding: 5px;
+  margin: 0;
+}
+.alarm-clock-wrap .handle {
+  display: none;
+}
+.alarm-clock-wrap .handle li {
+  color: #9baec8;
+}
+.alarm-clock-wrap .handle li:hover {
+  color: #d9e1e8;
+}
+.alarm-clock-wrap .control-hrs {
+  left: 10px;
+}
+.alarm-clock-wrap .control-mins {
+  left: 230px;
+}
+
+.displays {
+  font-family: sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  color: #9baec8;
+}
+
+.ampm-display {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-8px, -5px);
+}
+
+.btn-wrap {
+  display: none;
+  justify-content: space-around;
+  color: #9baec8;
+  font-family: sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+}
+
+.alarm, .mode, li {
+  cursor: pointer;
+}
+.alarm:hover, .mode:hover, li:hover {
+  color: #d9e1e8;
+}
+
+.flash {
+  -webkit-animation: flasher 1s linear infinite;
+          animation: flasher 1s linear infinite;
+}
+
+.alarm-flash {
+  -webkit-animation: flasher 1s linear infinite;
+          animation: flasher 1s linear infinite;
+  color: #d9e1e8;
+}
+
+@-webkit-keyframes flasher {
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes flasher {
+  50% {
+    opacity: 0.5;
+  }
+}
+.handle {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+#resetbuttontimer {
+  fill: #e1e5ea2e; 
+}
+
+
+  .active {
+    background: #83809a;
+    color: rgb(255, 253, 253) !important;
+    border: 2px solid rgb(255, 253, 253);
+  }
+  
+  
+
+  
+
+
+
+  *{
+    box-sizing: border-box;
+  }
+  
+  
+  
+  #todo-list {
+    font-size: 15px;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    color: #ffffff;
+    background-color: #ff0101;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 20px;
+    margin: 0;
+    width: 100%; 
+    min-height: 200px;
+    position: relative;
+    z-index: 8;
+
+  }
+  
+  .todo-wrapper{
+    width: 400px;
+    max-width: 100%;
+    min-height: 500px;
+    margin: 0;
+    border: 1.5px solid #eee;
+    border-radius: 4px;
+    padding: 40px 20px;
+    -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+    background-color: #88b4ff3b;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    border-radius: 20px;
+}
+  .todo-title{
+    font-size: 1.7em;
+    color: #e0e0e3;
+    font-weight: normal;
+  }
+  
+  #todo_form{
+    overflow: overlay;
+  }
+  
+  #todo_form label{
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  
+  .btn, input {
+    line-height: 2em;
+    border-radius: 3px;
+    border: 0;
+    display: inline-block;
+    margin: 15px 0;
+    padding: 0.2em 1em;
+    font-size: 1em;
+  }
+  
+  #todo_form_input[type='text'] {
+    border: 1px solid #ddd; 
+    min-width: 80%;
+    transition: all ease-in 0.25s;
+    background-color: #b7b9c02f;
+  }
+
+  
+  #todo_form_input:focus{
+    outline: none;
+    border: 1px solid #b7b9c02f;
+  }
+  
+  #todo_form_input::placeholder{
+    color: rgba(0,0,0,0.3);
+    font-style: italic;
+  }
+  
+  .btn{
+    text-align: center;
+    font-weight: bold; 
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+  }
+  
+  .btn-add {
+    background: #efeeeeb2;
+    color: #fefefe;
+    border-color: #efeeeeb2;
+    min-width: 17%;
+    pointer-events: none;
+    transition: all ease-in 0.25s;
+    font-size: 2.2em;
+    line-height: 0.5em;
+    padding: 0.3em 0.3em;
+    float: right;
+  }
+  
+  .btn-add.active{
+    background: #6764ff8a;
+    border-color: #6764ff8a;
+    pointer-events: visible;
+  }
+  
+  .btn-add.active:hover{
+    background: #4542f693;
+    border-color: #4542f690;
+  }
+  
+  .btn-add:active{
+    transform: scale(0.95);
+  }
+  .control-buttons{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+  }
+  .btn-secondary{
+    display: inline-block;
+    position: relative;
+    border: 0;
+    padding: 0;
+    margin: 0 10px;
+    color: #bbb9c6;
+  }
+  
+  .btn-secondary:after{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #f4586e;
+    bottom: 0px;
+    left: 0;
+    transition: all ease-in 0.25s;
+  }
+  
+  .btn-secondary:hover:after{
+    width: 100%;
+  }
+  
+  
+  ul.todo-list{
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  
+  ul.todo-list li{
+    position: relative;
+    list-style-type: none;
+    display: block;
+    margin: 10px 0;
+    background: #e0e8f5;
+    border-radius: 3px;
+    padding-left: 38px; /* custom checkbox width + 16 */
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 49px; /* delete button + 5 */ 
+    overflow: hidden;
+    background-color: #80aed32d;
+  }
+  
+  ul.todo-list.archived li{
+    background: #fff;
+  }
+  
+  .todo-text{
+    position: relative;
+    display: inline-block;
+    padding: 0 0.5em;
+  }
+  
+  
+  ul.todo-list li .delete{
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0;
+    width: 0;
+    background-color: #f56468;
+    color: #fff;
+    transition: all ease-in 0.25s;
+  }
+  
+  ul.todo-list li .delete:after{
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    background-image: "static/src/trash-svgrepo-com.svg";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all ease-in 0.25s;
+  }
+  
+  ul.todo-list li:hover .delete{
+    width: 44px;
+    opacity: 1;
+  }
+  
+  ul.todo-list li:hover .delete:after{
+    transform: translate(-50%, -50%) scale(1);
+  }
+    
+  .todo-checkbox{
+    position: absolute; 
+    opacity: 0;
+    display: none;
+  }
+  
+  .todo-checkbox + label {
+    position: absolute;
+    cursor: pointer;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    border: 1px solid #cfdcec;
+    background-color: #ffffff70;
+  }
+  
+  .todo-checkbox:checked + label:after{
+    position: absolute;
+    content: '';
+    top: 30%;
+    left: 50%;
+    height: 3px;
+    width: 6px;
+    border: solid #fc6c48;
+    border-width: 0 0 2px 2px;
+    transform-origin: center center;
+    transform: rotate(-45deg) translate(-50%, -50%);
+  }
+  
+  .todo-checkbox:checked + label:after{
+    display: block;
+  }
+  
+  .todo-checkbox:checked ~ .todo-text{
+    color: #888;
+    text-decoration: line-through
+  }
+  
+  .status.free{
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .status.free img{
+    display: block;
+    width: 50px;
+    margin: 10px auto;
+  }
+  
+  .todo-item-enter-active, .todo-item-leave-active {
+    transition: opacity ease 0.25s, transform ease-in-out 0.3s;
+    transform-origin: left center;
+  }
+  
+  /* .todo-item-leave-active below version 2.1.8 */
+  .todo-item-enter, .todo-item-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  
+   
+  .slide-fade-enter-active, .slide-fade-leave-active {
+    transition: all 0.3s ease;
+  }
+  /* .slide-fade-leave-active below version 2.1.8 */
+  .slide-fade-enter, .slide-fade-leave-to {  
+    transform: scale(1.1);
+    opacity: 0;
+  }
+
+
+  .status.free{
+
+    color: #c3c2cd;
+  }
+
+
+  #todoBox {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.664);
+    box-shadow: 0 0 30px rgba(229, 232, 239, 0.2);
+    border-radius: 20px;
+}
+
+#todo_cancelButton {
+  position: absolute;
+  top: 30px;
+  right: 24px;
+  background-color: transparent; 
+  color: rgba(255, 255, 255, 0.58);
+  border: none;
+  font-size: 23.5px; 
+  cursor: pointer;
+}
+
+#todoItems {
+  overflow-y: auto;
+  max-height: 300px; /* Adjust as needed */
+}
+
+
+
+
+
+
+
+#chat-box {
+  font-size: 15px;
+  font-family: "Arial Rounded MT Bold", sans-serif;
+  color: #ffffff;
+  background-color: #ff0101;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 20px;
+  margin: 0;
+  width: 100%; 
+  min-height: 200px;
+  position: relative;
+  z-index: 8;
+
+}
+
+.chat-wrapper{
+  width: 400px;
+  max-width: 100%;
+  min-height: 500px;
+  margin: 0;
+  border: 1.5px solid #eee;
+  border-radius: 4px;
+  padding: 40px 20px;
+  -webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.05);
+  background-color: #88b4ff3b;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  font-family: "Arial Rounded MT Bold", sans-serif;
+  border-radius: 20px;
+}
+
+#chat_cancelButton {
+  position: absolute;
+  top: 30px;
+  right: 24px;
+  background-color: transparent; 
+  color: rgba(255, 255, 255, 0.58);
+  border: none;
+  font-size: 23.5px; 
+  cursor: pointer;
+}
+
+
+.chat-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Adjust as needed */
+  height: 55px; /* Adjust as needed */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  align-items: center;
+  padding: 0 10px; /* Padding on the sides */
+  box-sizing: border-box;
+}
+
+.chat-controls-textarea:focus {
+  outline: 2px solid rgba(214, 214, 214, 0.234);
+}
+
+.chat-controls-textarea {
+  flex-grow: 1;
+  margin-right: 10px; /* Space between textarea and send button */
+  padding: 7.5px;
+  background-color: #fffdfd00;
+  border: none;
+  color: #f0f1f2;
+}
+
+.chat-controls-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px; /* Adjust as needed */
+}
+
+.chat-controls-textarea:focus {
+  outline: 2px solid rgba(159, 159, 159, 0.343)(159, 159, 159);
+}
+
+.chat-controls-btn.send:hover i, .chat-controls-btn.send:active i {
+  color: rgb(117, 187, 222);
+}
+
+.welcome-header {
+  color: rgba(228, 226, 226, 0.788); /* Change the text color */
+  font-size: 20px; /* Change the font size */
+  transform: translateY(-30px);
+  font-family: 'Roboto', sans-serif;
+
+}
+
+
+.message {
+  padding: 10px;
+}
+
+.message-text {
+  font-size: 20px;
+}
+
+.message-user {
+  font-size: 12px;
+  display: block;
+  color: #000000;
+}
+
+.message-user, .message-timestamp {
+  display: inline;
+}
+
+.message-timestamp {
+  font-size: 12px; /* Adjust this value as needed */
+  margin-left: 260px; /* Adjust this value as needed */
+  color: #000000;
+}
+
+.chat-history {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 300px; /* Adjust this value as needed */
+  position: relative;
+  padding-top: 0px; /* Adjust this value as needed */
+  margin-top: -10px;
+  margin-bottom: 0px;
+
+}
+
