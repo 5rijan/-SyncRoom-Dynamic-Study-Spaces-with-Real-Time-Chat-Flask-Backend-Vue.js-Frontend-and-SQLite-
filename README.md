@@ -29,34 +29,53 @@ This file, `app.py`, acts as the central hub for our Flask application, responsi
 2. Run the application: `python app.py`
 3. Access the application in your browser: [http://localhost:5000/](http://localhost:5000/)
 
-## Project Structure
+**Project Structure:**
 
-/stu-focus                    # Main project directory
-|   |-- /instance             # Instance directory with rooms.db
-|   |   `-- rooms.db          # SQLite database file
-|   |-- /migrations           # Database migrations directory
-|   |   |-- /pycache          # Python cache files
-|   |   `-- /version          # Migration version files
-|   |-- /static               # Static files (CSS, JS, images)
-|   |   |-- room.css          # CSS styles for the room
-|   |   |-- room.js           # JavaScript logic for the room
-|   |   |-- script.js         # Other JavaScript logic
-|   |   |-- style.css         # General CSS styles
-|   |   `-- /src              # Image sources directory
-|   |       `-- ...           # Other image files
-|   |-- /templates            # HTML templates
-|   |   |-- index.html        # Main page template
-|   |   `-- room.html         # Study room template
-|   |-- app.py                # Main entry point for the Flask application
-|   |-- requirements.txt      # List of project dependencies
-|   `-- test.py               # Test script
+- **stu-focus/**: Main project directory
+  - **instance/**: Instance directory with rooms.db
+    - rooms.db: SQLite database file
+  - **migrations/**: Database migrations directory
+    - pycache/: Python cache files
+    - version/: Migration version files
+  - **static/**: Static files (CSS, JS, images)
+    - room.css: CSS styles for the room
+    - room.js: JavaScript logic for the room
+    - script.js: Other JavaScript logic
+    - style.css: General CSS styles
+    - **src/**: Image sources directory
+      - ...: Other image files
+  - **templates/**: HTML templates
+    - index.html: Main page template
+    - room.html: Study room template
+  - app.py: Main entry point for the Flask application
+  - requirements.txt: List of project dependencies
+  - test.py: Test script
+- README.md: Project documentation
 
 
 
+**Screenshots:**
 
-## Screenshots
+1. **Joining a Room (index.html):**
 
-<!-- Include screenshots or images of your project here -->
+   ![Joining a Room](https://github.com/5rijan/Stu-Focus-Dynamic-Study-Spaces-with-Real-Time-Chat-Flask-Backend-Frontend-and-SQLite-database/assets/87299199/2253b0f7-76f9-410b-9e71-2d79ce4dffb9)
+   *-User joining a virtual study room.*
+
+
+
+2. **Real-Time Chat Application (room.html):**
+
+   ![Chat Application](https://github.com/5rijan/Stu-Focus-Dynamic-Study-Spaces-with-Real-Time-Chat-Flask-Backend-Frontend-and-SQLite-database/assets/87299199/fc69f4fe-7fe9-458d-91d7-f73513a55704)
+   *-Real-time communication with other members in the study room.*
+
+
+
+3. **To-Do Box in Use (room.html):**
+
+   ![To-Do Box](https://github.com/5rijan/Stu-Focus-Dynamic-Study-Spaces-with-Real-Time-Chat-Flask-Backend-Frontend-and-SQLite-database/assets/87299199/0d92264e-fb0e-4ffd-8dc0-c9f35cd83e35)
+   *-Managing tasks and to-dos within the study room.*
+
+
 
 ## Future Enhancements
 
